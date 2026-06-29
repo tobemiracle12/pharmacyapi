@@ -21,8 +21,9 @@ const app = express();
 
 // ─── Global Middleware ─────────────────────────────────────────────────────────
 app.use(cors({
-    origin: true,
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json({ limit: '10mb' }));
